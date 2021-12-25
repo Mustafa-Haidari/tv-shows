@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>TV Shows Search App</title>
+</head>
+
+<body>
+
+    <h3>Search Your favorite TV Shows</h3>
+
+    <form class="search-container">
+        <input type="text" placeholder="TV show title" name="query">
+        <button>Search</button>
+    </form>
+
+    <div class="body-container">
+        <div class="search-results">
+            <p class="title-text">Search Results</p>
+            <div class="ul-results">
+                
+            </div>
+        </div>
+
+        <div class="favorites">
+            <p class="title-text">favorites</p>
+        </div>
+    </div>
+
+    <div class="view-layer">
+    </div>
+    <div class="view-container">
+        <div class="show-image">
+            <img class="image" src="#" alt="">
+        </div>
+        <div class="details">
+            <h3 class="name"></h3>
+            <p>Aired: <span class="aired"></span></p>
+            <p>Genres: <span class="genres"></span></p>
+            <p>Language: <span class="language"></span></p>
+            <a href="#" class="link">
+                <p>Read More</p>
+            </a>
+        </div>
+        <button class="close-view">Close</button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

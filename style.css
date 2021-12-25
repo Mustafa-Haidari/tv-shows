@@ -1,0 +1,181 @@
+:root {
+    --color-1: #00204a;
+    --color-2: #005792;
+    --color-3: #00bbf0;
+    --color-4: #fdb44b;
+    --danger-color: #EE3434;
+    --body-font: 'Raleway', sans-serif;
+}
+
+body {
+    max-width: 800px;
+    margin: 1rem auto;
+    font-family: var(--body-font);
+    /* border: 1px dashed #ddd; */
+    padding: 0.5rem 1.5rem;
+}
+
+button {
+    font-family: inherit;
+    color: #fff;
+    border-radius: .2rem;
+    padding: .5rem;
+    border: none;
+    cursor: pointer;
+}
+
+input,
+button,
+ul,
+p,
+h3 {
+    font-family: inherit;
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0
+}
+
+.search-container input {
+    width: 100%;
+    margin-right: 1rem;
+    padding: .5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px dashed #ddd;
+    border-radius: .2rem;
+}
+
+.search-container button {
+    width: 30%;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--color-4);
+    border: none;
+    border-radius: .2rem;
+    cursor: pointer;
+    color: black;
+}
+
+.search-container button:hover {
+    color: white;
+}
+
+/* body container */
+.body-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-results {
+    border: 1px dashed #ddd;
+    width: 70%;
+    margin-right: 1rem;
+}
+
+.title-text {
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.ul-results {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    transition: .2s all;
+}
+
+.ul-results .result-div img {
+    width: 100%;
+}
+
+.result-div {
+    position: relative;
+}
+
+.result-info {
+    position: absolute;
+    bottom: 0;
+}
+
+.result-info p.result-title {
+    position: relative;
+    padding: 1rem;
+    bottom: 0;
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 0px 0px 8px black;
+    color: white;
+    cursor: pointer;
+}
+
+.result-info p {
+    display: none;
+}
+
+/* Pop Up style */
+/* VIEW LAYER */
+.view-layer {
+    display: none;
+    background-color: #333;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 50%;
+}
+.view-container .details {
+    margin-left: 1rem;
+}
+
+.view-container {
+    width: 0;
+    height: 0;
+    transition: .4s ease;
+    max-width: 500px;
+    max-height: 295px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #eee;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    opacity: 100%;
+    color: #333;
+    padding: 0;
+    display: flex;
+}
+
+/*                  BUTTON - CLOSE VIEW */
+.close-view {
+    background-color: var(--danger-color);
+    padding: .3rem .5rem;
+    position: inherit;
+    right: 0;
+    top: 0;
+}
+
+/* Favorites */
+.favorites {
+    border: 1px dashed #ddd;
+    width: 30%;
+}
+.heart-icon {
+    color: red;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    cursor: pointer;
+    text-shadow: 2px 3px 4px black;
+}
+.heart-icon:hover {
+    font-size: 1.7rem;
+    color: orange;
+}
