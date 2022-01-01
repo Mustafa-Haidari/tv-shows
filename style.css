@@ -118,6 +118,11 @@ h3 {
     display: none;
 }
 
+.result-info-favs {
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
 /* Pop Up style */
 /* VIEW LAYER */
 .view-layer {
