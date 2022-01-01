@@ -8,6 +8,7 @@ let closeView = document.querySelector('.close-view')
 let currentItems = [];
 let favoriteItems = [];
 let idOfItem;
+let temp = {}
 
 // search form
 form.addEventListener('submit', async (e) => {
@@ -56,33 +57,39 @@ const clearAll = () => {
 // add to favorites
 const addToFav = () => {
     let heartBtns = document.querySelectorAll('.heart-icon')
-    heartBtns.forEach(heart => {
-        heart.addEventListener('click', e => {
-            idOfItem = e.target.nextSibling.firstChild.getAttribute('data')
-            for(let item of currentItems){
-                if(item.show.id.toString() === idOfItem){
-                    let temp = {}
+    
+    heartBtns.forEach(favorite => {
+        favorite.addEventListener('click', e => {
+            let currentShowID = e.target.nextSibling.firstChild.getAttribute('data');
+            // let localStorageData = JSON.parse(localStorage.getItem('Favs'));
+
+            for (let item of currentItems) {
+                if (item.show.id.toString() === currentShowID) {
                     temp.id = item.show.id
                     temp.name = item.show.name
                     temp.image = item.show.image.medium ? item.show.image.medium : "#"
                     temp.genres = item.show.genres.length == 0 ? "Not specified" : item.show.genres
                     temp.language = item.show.language
                     temp.aired = item.show.aired
-                    favoriteItems.push(temp)
-                    localStorage.setItem('Favs', JSON.stringify(favoriteItems))
-                    const LSItems = JSON.parse(localStorage.getItem('Favs'))
-                    LSItems.forEach(item => {
-                        if(item.id.toString() === idOfItem){
-                            const p = document.createElement('p')
-                            p.innerText = item.name
-                            p.setAttribute('data', item.id)
-                            favorites.appendChild(p)
-                            
-                        }
-                    })
-                    
                 }
             }
+
+            const s = obj => obj.id === temp.id
+
+            if(favoriteItems.length > 0){
+                let localStorageData = JSON.parse(localStorage.getItem('Favs'))
+                if(favoriteItems.some(s)){
+                    console.log('exists')
+                } else {
+                    favoriteItems.push(temp)
+                    
+                }
+            } else {
+                favoriteItems.push(temp)
+            }
+            localStorage.setItem('Favs', JSON.stringify(favoriteItems));
+            temp = {}
+            // console.log(temp)
         })
     })
 }
